@@ -82,126 +82,336 @@
           </p>
         </div>
 
-        <!-- filter buttons and application cards -->
+        <!-- filter buttons and job cards -->
         <div class="space-y-4">
-          <div id="buttons" class="space-x-2">
+          <!-- filter buttons -->
+          <section id="buttons" class="space-x-2">
             <button
               id="all-btn"
               class="text-white font-semibold bg-[#3B82F6] text-[0.75rem] px-2 rounded-sm w-20 h-8 cursor-pointer transition-all duration-200 hover:bg-[#2563EB] hover:shadow-md hover:-translate-y-0.5"
+              onclick="(toggleBtn('available-jobs'), activeBtn('all-btn'))"
             >
               All
             </button>
             <button
               id="interview-btn"
               class="text-[#64748B] font-medium bg-white border border-[#F1F2F4] text-[0.75rem] px-2 rounded-sm w-20 h-8 cursor-pointer transition-all duration-200 hover:border-[#3B82F6] hover:text-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
+              onclick="
+                (toggleBtn('interviewed-jobs'), activeBtn('interview-btn'))
+              "
             >
               Interview
             </button>
             <button
               id="rejected-btn"
               class="text-[#64748B] font-medium bg-white border border-[#F1F2F4] text-[0.75rem] px-2 rounded-sm w-20 h-8 cursor-pointer transition-all duration-200 hover:border-[#3B82F6] hover:text-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
+              onclick="
+                (toggleBtn('rejected-jobs'), activeBtn('rejected-btn'))
+              "
             >
               Rejected
             </button>
-          </div>
+          </section>
 
-          <!-- job cards -->
-          <div id="job-cards" class="space-y-4">
-            <!-- card 1 -->
-            <div
-              class="card space-y-5 bg-white border border-[#F1F2F4] rounded-lg p-6 transition-all duration-200 hover:border-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
-            >
-              <div class="card-heading flex justify-between items-center">
-                <div class="job-title space-y-1">
-                  <h3 class="text-[1.125rem] text-[#002C5C] font-semibold">
-                    Mobile First Corp
-                  </h3>
-                  <h4 class="text-[1rem] text-[#64748B] font-normal">
-                    React Native Developer
-                  </h4>
+          <!-- jobs -->
+          <section id="jobs" class="space-y-4">
+            <!-- available jobs -->
+            <section id="available-jobs" class="space-y-4">
+              <!-- card 1 -->
+              <div
+                class="card space-y-5 bg-white border border-[#F1F2F4] rounded-lg p-6 transition-all duration-200 hover:border-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
+              >
+                <div class="card-heading flex justify-between items-center">
+                  <div class="job-title space-y-1">
+                    <h3 class="text-[1.125rem] text-[#002C5C] font-semibold">
+                      Mobile First Corp
+                    </h3>
+                    <h4 class="text-[1rem] text-[#64748B] font-normal">
+                      React Native Developer
+                    </h4>
+                  </div>
+                  <button
+                    id="delete-job"
+                    class="border border-[#F1F2F4] text-[#64748B] rounded-full w-fit p-2 flex items-center justify-center aspect-square cursor-pointer transition-all duration-200 hover:border-[#3B82F6] hover:text-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
+                  >
+                    <i class="fa-regular fa-trash-can"></i>
+                  </button>
                 </div>
-                <button
-                  id="delete-job"
-                  class="border border-[#F1F2F4] text-[#64748B] rounded-full w-fit p-2 flex items-center justify-center aspect-square cursor-pointer transition-all duration-200 hover:border-[#3B82F6] hover:text-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
-                >
-                  <i class="fa-regular fa-trash-can"></i>
-                </button>
-              </div>
-              <p class="text-[0.875rem] text-[#64748B]">
-                Remote • Full-time • $130,000 - $175,000
-              </p>
-              <div class="status space-y-2">
-                <p
-                  class="status-badge text-[0.875rem] text-[#002C5C] font-medium bg-[#EEF4FF] w-fit py-2 px-3 rounded-sm"
-                >
-                  NOT APPLIED
+                <p class="text-[0.875rem] text-[#64748B]">
+                  Remote • Full-time • $130,000 - $175,000
                 </p>
-                <p class="text-[0.875rem] text-[#323B49] font-medium">
-                  Build cross-platform mobile applications using React Native.
-                  Work on products used by millions of users worldwide.
-                </p>
-              </div>
-              <div class="action-bottons space-x-2">
-                <button
-                  class="status-badge text-[0.875rem] text-[#10B981] border border-[#10B981] font-medium w-fit py-2 px-3 rounded-sm cursor-pointer transition-all duration-200 hover:bg-[#10B981] hover:text-white hover:shadow-sm hover:-translate-y-0.5"
-                >
-                  INTERVIEW
-                </button>
-                <button
-                  class="status-badge text-[0.875rem] text-[#EF4444] border border-[#EF4444] font-medium w-fit py-2 px-3 rounded-sm cursor-pointer transition-all duration-200 hover:bg-[#EF4444] hover:text-white hover:shadow-sm hover:-translate-y-0.5"
-                >
-                  REJECTED
-                </button>
-              </div>
-            </div>
-            <!-- card 1 -->
-            <div
-              class="card space-y-5 bg-white border border-[#F1F2F4] rounded-lg p-6 transition-all duration-200 hover:border-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
-            >
-              <div class="card-heading flex justify-between items-center">
-                <div class="job-title space-y-1">
-                  <h3 class="text-[1.125rem] text-[#002C5C] font-semibold">
-                    WebFlow Agency
-                  </h3>
-                  <h4 class="text-[1rem] text-[#64748B] font-normal">
-                    Web Designer & Developer
-                  </h4>
+                <div class="status space-y-2">
+                  <p
+                    class="status-badge text-[0.875rem] text-[#002C5C] font-medium bg-[#EEF4FF] w-fit py-2 px-3 rounded-sm"
+                  >
+                    NOT APPLIED
+                  </p>
+                  <p class="text-[0.875rem] text-[#323B49] font-medium">
+                    Build cross-platform mobile applications using React Native.
+                    Work on products used by millions of users worldwide.
+                  </p>
                 </div>
-                <button
-                  id="delete-job"
-                  class="border border-[#F1F2F4] text-[#64748B] rounded-full w-fit p-2 flex items-center justify-center aspect-square cursor-pointer transition-all duration-200 hover:border-[#3B82F6] hover:text-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
-                >
-                  <i class="fa-regular fa-trash-can"></i>
-                </button>
+                <div class="action-bottons space-x-2">
+                  <button
+                    class="status-badge text-[0.875rem] text-[#10B981] border border-[#10B981] font-medium w-fit py-2 px-3 rounded-sm cursor-pointer transition-all duration-200 hover:bg-[#10B981] hover:text-white hover:shadow-sm hover:-translate-y-0.5"
+                  >
+                    INTERVIEW
+                  </button>
+                  <button
+                    class="status-badge text-[0.875rem] text-[#EF4444] border border-[#EF4444] font-medium w-fit py-2 px-3 rounded-sm cursor-pointer transition-all duration-200 hover:bg-[#EF4444] hover:text-white hover:shadow-sm hover:-translate-y-0.5"
+                  >
+                    REJECTED
+                  </button>
+                </div>
               </div>
-              <p class="text-[0.875rem] text-[#64748B]">
-                Los Angeles, CA • Part-time • $80,000 - $120,000
-              </p>
-              <div class="status space-y-2">
-                <p
-                  class="status-badge text-[0.875rem] text-[#002C5C] font-medium bg-[#EEF4FF] w-fit py-2 px-3 rounded-sm"
-                >
-                  NOT APPLIED
+              <!-- card 2 -->
+              <div
+                class="card space-y-5 bg-white border border-[#F1F2F4] rounded-lg p-6 transition-all duration-200 hover:border-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
+              >
+                <div class="card-heading flex justify-between items-center">
+                  <div class="job-title space-y-1">
+                    <h3 class="text-[1.125rem] text-[#002C5C] font-semibold">
+                      WebFlow Agency
+                    </h3>
+                    <h4 class="text-[1rem] text-[#64748B] font-normal">
+                      Web Designer & Developer
+                    </h4>
+                  </div>
+                  <button
+                    id="delete-job"
+                    class="border border-[#F1F2F4] text-[#64748B] rounded-full w-fit p-2 flex items-center justify-center aspect-square cursor-pointer transition-all duration-200 hover:border-[#3B82F6] hover:text-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
+                  >
+                    <i class="fa-regular fa-trash-can"></i>
+                  </button>
+                </div>
+                <p class="text-[0.875rem] text-[#64748B]">
+                  Los Angeles, CA • Part-time • $80,000 - $120,000
                 </p>
-                <p class="text-[0.875rem] text-[#323B49] font-medium">
-                  Create stunning web experiences for high-profile clients. Must
-                  have portfolio and experience with modern web design trends.
+                <div class="status space-y-2">
+                  <p
+                    class="status-badge text-[0.875rem] text-[#002C5C] font-medium bg-[#EEF4FF] w-fit py-2 px-3 rounded-sm"
+                  >
+                    NOT APPLIED
+                  </p>
+                  <p class="text-[0.875rem] text-[#323B49] font-medium">
+                    Create stunning web experiences for high-profile clients.
+                    Must have portfolio and experience with modern web design
+                    trends.
+                  </p>
+                </div>
+                <div class="action-bottons space-x-2">
+                  <button
+                    class="status-badge text-[0.875rem] text-[#10B981] border border-[#10B981] font-medium w-fit py-2 px-3 rounded-sm cursor-pointer transition-all duration-200 hover:bg-[#10B981] hover:text-white hover:shadow-sm hover:-translate-y-0.5"
+                  >
+                    INTERVIEW
+                  </button>
+                  <button
+                    class="status-badge text-[0.875rem] text-[#EF4444] border border-[#EF4444] font-medium w-fit py-2 px-3 rounded-sm cursor-pointer transition-all duration-200 hover:bg-[#EF4444] hover:text-white hover:shadow-sm hover:-translate-y-0.5"
+                  >
+                    REJECTED
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            <!-- interviewed jobs -->
+            <section id="interviewed-jobs" class="space-y-4 hidden">
+              <!-- card 1 -->
+              <div
+                class="card space-y-5 bg-white border border-[#F1F2F4] rounded-lg p-6 transition-all duration-200 hover:border-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
+              >
+                <div class="card-heading flex justify-between items-center">
+                  <div class="job-title space-y-1">
+                    <h3 class="text-[1.125rem] text-[#002C5C] font-semibold">
+                      DataViz Solutions
+                    </h3>
+                    <h4 class="text-[1rem] text-[#64748B] font-normal">
+                      React Native Developer
+                    </h4>
+                  </div>
+                  <button
+                    id="delete-job"
+                    class="border border-[#F1F2F4] text-[#64748B] rounded-full w-fit p-2 flex items-center justify-center aspect-square cursor-pointer transition-all duration-200 hover:border-[#3B82F6] hover:text-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
+                  >
+                    <i class="fa-regular fa-trash-can"></i>
+                  </button>
+                </div>
+                <p class="text-[0.875rem] text-[#64748B]">
+                  Remote • Full-time • $130,000 - $175,000
                 </p>
+                <div class="status space-y-2">
+                  <p
+                    class="status-badge text-[0.875rem] text-[#002C5C] font-medium bg-[#EEF4FF] w-fit py-2 px-3 rounded-sm"
+                  >
+                    NOT APPLIED
+                  </p>
+                  <p class="text-[0.875rem] text-[#323B49] font-medium">
+                    Build cross-platform mobile applications using React Native.
+                    Work on products used by millions of users worldwide.
+                  </p>
+                </div>
+                <div class="action-bottons space-x-2">
+                  <button
+                    class="status-badge text-[0.875rem] text-[#10B981] border border-[#10B981] font-medium w-fit py-2 px-3 rounded-sm cursor-pointer transition-all duration-200 hover:bg-[#10B981] hover:text-white hover:shadow-sm hover:-translate-y-0.5"
+                  >
+                    INTERVIEW
+                  </button>
+                  <button
+                    class="status-badge text-[0.875rem] text-[#EF4444] border border-[#EF4444] font-medium w-fit py-2 px-3 rounded-sm cursor-pointer transition-all duration-200 hover:bg-[#EF4444] hover:text-white hover:shadow-sm hover:-translate-y-0.5"
+                  >
+                    REJECTED
+                  </button>
+                </div>
               </div>
-              <div class="action-bottons space-x-2">
-                <button
-                  class="status-badge text-[0.875rem] text-[#10B981] border border-[#10B981] font-medium w-fit py-2 px-3 rounded-sm cursor-pointer transition-all duration-200 hover:bg-[#10B981] hover:text-white hover:shadow-sm hover:-translate-y-0.5"
-                >
-                  INTERVIEW
-                </button>
-                <button
-                  class="status-badge text-[0.875rem] text-[#EF4444] border border-[#EF4444] font-medium w-fit py-2 px-3 rounded-sm cursor-pointer transition-all duration-200 hover:bg-[#EF4444] hover:text-white hover:shadow-sm hover:-translate-y-0.5"
-                >
-                  REJECTED
-                </button>
+              <!-- card 2 -->
+              <div
+                class="card space-y-5 bg-white border border-[#F1F2F4] rounded-lg p-6 transition-all duration-200 hover:border-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
+              >
+                <div class="card-heading flex justify-between items-center">
+                  <div class="job-title space-y-1">
+                    <h3 class="text-[1.125rem] text-[#002C5C] font-semibold">
+                      WebFlow Agency
+                    </h3>
+                    <h4 class="text-[1rem] text-[#64748B] font-normal">
+                      Web Designer & Developer
+                    </h4>
+                  </div>
+                  <button
+                    id="delete-job"
+                    class="border border-[#F1F2F4] text-[#64748B] rounded-full w-fit p-2 flex items-center justify-center aspect-square cursor-pointer transition-all duration-200 hover:border-[#3B82F6] hover:text-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
+                  >
+                    <i class="fa-regular fa-trash-can"></i>
+                  </button>
+                </div>
+                <p class="text-[0.875rem] text-[#64748B]">
+                  Los Angeles, CA • Part-time • $80,000 - $120,000
+                </p>
+                <div class="status space-y-2">
+                  <p
+                    class="status-badge text-[0.875rem] text-[#002C5C] font-medium bg-[#EEF4FF] w-fit py-2 px-3 rounded-sm"
+                  >
+                    NOT APPLIED
+                  </p>
+                  <p class="text-[0.875rem] text-[#323B49] font-medium">
+                    Create stunning web experiences for high-profile clients.
+                    Must have portfolio and experience with modern web design
+                    trends.
+                  </p>
+                </div>
+                <div class="action-bottons space-x-2">
+                  <button
+                    class="status-badge text-[0.875rem] text-[#10B981] border border-[#10B981] font-medium w-fit py-2 px-3 rounded-sm cursor-pointer transition-all duration-200 hover:bg-[#10B981] hover:text-white hover:shadow-sm hover:-translate-y-0.5"
+                  >
+                    INTERVIEW
+                  </button>
+                  <button
+                    class="status-badge text-[0.875rem] text-[#EF4444] border border-[#EF4444] font-medium w-fit py-2 px-3 rounded-sm cursor-pointer transition-all duration-200 hover:bg-[#EF4444] hover:text-white hover:shadow-sm hover:-translate-y-0.5"
+                  >
+                    REJECTED
+                  </button>
+                </div>
               </div>
-            </div>
-          </div>
+            </section>
+
+            <!-- rejected jobs -->
+            <section id="rejected-jobs" class="space-y-4 hidden">
+              <!-- card 1 -->
+              <div
+                class="card space-y-5 bg-white border border-[#F1F2F4] rounded-lg p-6 transition-all duration-200 hover:border-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
+              >
+                <div class="card-heading flex justify-between items-center">
+                  <div class="job-title space-y-1">
+                    <h3 class="text-[1.125rem] text-[#002C5C] font-semibold">
+                      CloudFirst Inc
+                    </h3>
+                    <h4 class="text-[1rem] text-[#64748B] font-normal">
+                      React Native Developer
+                    </h4>
+                  </div>
+                  <button
+                    id="delete-job"
+                    class="border border-[#F1F2F4] text-[#64748B] rounded-full w-fit p-2 flex items-center justify-center aspect-square cursor-pointer transition-all duration-200 hover:border-[#3B82F6] hover:text-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
+                  >
+                    <i class="fa-regular fa-trash-can"></i>
+                  </button>
+                </div>
+                <p class="text-[0.875rem] text-[#64748B]">
+                  Remote • Full-time • $130,000 - $175,000
+                </p>
+                <div class="status space-y-2">
+                  <p
+                    class="status-badge text-[0.875rem] text-[#002C5C] font-medium bg-[#EEF4FF] w-fit py-2 px-3 rounded-sm"
+                  >
+                    NOT APPLIED
+                  </p>
+                  <p class="text-[0.875rem] text-[#323B49] font-medium">
+                    Build cross-platform mobile applications using React Native.
+                    Work on products used by millions of users worldwide.
+                  </p>
+                </div>
+                <div class="action-bottons space-x-2">
+                  <button
+                    class="status-badge text-[0.875rem] text-[#10B981] border border-[#10B981] font-medium w-fit py-2 px-3 rounded-sm cursor-pointer transition-all duration-200 hover:bg-[#10B981] hover:text-white hover:shadow-sm hover:-translate-y-0.5"
+                  >
+                    INTERVIEW
+                  </button>
+                  <button
+                    class="status-badge text-[0.875rem] text-[#EF4444] border border-[#EF4444] font-medium w-fit py-2 px-3 rounded-sm cursor-pointer transition-all duration-200 hover:bg-[#EF4444] hover:text-white hover:shadow-sm hover:-translate-y-0.5"
+                  >
+                    REJECTED
+                  </button>
+                </div>
+              </div>
+              <!-- card 2 -->
+              <div
+                class="card space-y-5 bg-white border border-[#F1F2F4] rounded-lg p-6 transition-all duration-200 hover:border-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
+              >
+                <div class="card-heading flex justify-between items-center">
+                  <div class="job-title space-y-1">
+                    <h3 class="text-[1.125rem] text-[#002C5C] font-semibold">
+                      WebFlow Agency
+                    </h3>
+                    <h4 class="text-[1rem] text-[#64748B] font-normal">
+                      Web Designer & Developer
+                    </h4>
+                  </div>
+                  <button
+                    id="delete-job"
+                    class="border border-[#F1F2F4] text-[#64748B] rounded-full w-fit p-2 flex items-center justify-center aspect-square cursor-pointer transition-all duration-200 hover:border-[#3B82F6] hover:text-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
+                  >
+                    <i class="fa-regular fa-trash-can"></i>
+                  </button>
+                </div>
+                <p class="text-[0.875rem] text-[#64748B]">
+                  Los Angeles, CA • Part-time • $80,000 - $120,000
+                </p>
+                <div class="status space-y-2">
+                  <p
+                    class="status-badge text-[0.875rem] text-[#002C5C] font-medium bg-[#EEF4FF] w-fit py-2 px-3 rounded-sm"
+                  >
+                    NOT APPLIED
+                  </p>
+                  <p class="text-[0.875rem] text-[#323B49] font-medium">
+                    Create stunning web experiences for high-profile clients.
+                    Must have portfolio and experience with modern web design
+                    trends.
+                  </p>
+                </div>
+                <div class="action-bottons space-x-2">
+                  <button
+                    class="status-badge text-[0.875rem] text-[#10B981] border border-[#10B981] font-medium w-fit py-2 px-3 rounded-sm cursor-pointer transition-all duration-200 hover:bg-[#10B981] hover:text-white hover:shadow-sm hover:-translate-y-0.5"
+                  >
+                    INTERVIEW
+                  </button>
+                  <button
+                    class="status-badge text-[0.875rem] text-[#EF4444] border border-[#EF4444] font-medium w-fit py-2 px-3 rounded-sm cursor-pointer transition-all duration-200 hover:bg-[#EF4444] hover:text-white hover:shadow-sm hover:-translate-y-0.5"
+                  >
+                    REJECTED
+                  </button>
+                </div>
+              </div>
+            </section>
+          </section>
 
           <!-- no jobs -->
           <div
@@ -224,6 +434,7 @@
       </div>
     </main>
 
+    <script src="./scripts/utils.js"></script>
     <script src="./scripts/script.js"></script>
   </body>
 </html>
