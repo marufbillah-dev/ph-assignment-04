@@ -51,7 +51,7 @@
             class="count-card p-5 bg-white rounded-lg border border-[#F1F2F4] space-y-2 w-full"
           >
             <p class="text-[0.875rem] text-[#323B49] font-medium">Interview</p>
-            <p class="text-[1.5rem] text-[#10B981] font-bold" id="total-count">
+            <p class="text-[1.5rem] text-[#10B981] font-bold" id="interview-count">
               0
             </p>
           </div>
@@ -60,7 +60,7 @@
             class="count-card p-5 bg-white rounded-lg border border-[#F1F2F4] space-y-2 w-full"
           >
             <p class="text-[0.875rem] text-[#323B49] font-medium">Rejected</p>
-            <p class="text-[1.5rem] text-[#EF4444] font-bold" id="total-count">
+            <p class="text-[1.5rem] text-[#EF4444] font-bold" id="rejected-count">
               0
             </p>
           </div>
@@ -78,7 +78,7 @@
             Available Jobs
           </h2>
           <p class="text-[#64748B] font-medium">
-            <span id="jobs-count">0</span> Jobs
+            <span id="jobs-count">0</span><span id="out-of"></span> Jobs
           </p>
         </div>
 
@@ -89,7 +89,7 @@
             <button
               id="all-btn"
               class="text-white font-semibold bg-[#3B82F6] text-[0.75rem] px-2 rounded-sm w-20 h-8 cursor-pointer transition-all duration-200 hover:bg-[#2563EB] hover:shadow-md hover:-translate-y-0.5"
-              onclick="(toggleBtn('available-jobs'), activeBtn('all-btn'))"
+              onclick="(toggleBtn('available-jobs'), activeBtn('all-btn')), outOfCounter()"
             >
               All
             </button>
@@ -97,7 +97,7 @@
               id="interview-btn"
               class="text-[#64748B] font-medium bg-white border border-[#F1F2F4] text-[0.75rem] px-2 rounded-sm w-20 h-8 cursor-pointer transition-all duration-200 hover:border-[#3B82F6] hover:text-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
               onclick="
-                (toggleBtn('interviewed-jobs'), activeBtn('interview-btn'))
+                (toggleBtn('interviewed-jobs'), activeBtn('interview-btn')), outOfCounter()
               "
             >
               Interview
@@ -106,7 +106,7 @@
               id="rejected-btn"
               class="text-[#64748B] font-medium bg-white border border-[#F1F2F4] text-[0.75rem] px-2 rounded-sm w-20 h-8 cursor-pointer transition-all duration-200 hover:border-[#3B82F6] hover:text-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
               onclick="
-                (toggleBtn('rejected-jobs'), activeBtn('rejected-btn'))
+                (toggleBtn('rejected-jobs'), activeBtn('rejected-btn')), outOfCounter()
               "
             >
               Rejected
@@ -363,6 +363,53 @@
                 </div>
               </div>
               <!-- card 2 -->
+              <div
+                class="card space-y-5 bg-white border border-[#F1F2F4] rounded-lg p-6 transition-all duration-200 hover:border-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
+              >
+                <div class="card-heading flex justify-between items-center">
+                  <div class="job-title space-y-1">
+                    <h3 class="text-[1.125rem] text-[#002C5C] font-semibold">
+                      WebFlow Agency
+                    </h3>
+                    <h4 class="text-[1rem] text-[#64748B] font-normal">
+                      Web Designer & Developer
+                    </h4>
+                  </div>
+                  <button
+                    id="delete-job"
+                    class="border border-[#F1F2F4] text-[#64748B] rounded-full w-fit p-2 flex items-center justify-center aspect-square cursor-pointer transition-all duration-200 hover:border-[#3B82F6] hover:text-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
+                  >
+                    <i class="fa-regular fa-trash-can"></i>
+                  </button>
+                </div>
+                <p class="text-[0.875rem] text-[#64748B]">
+                  Los Angeles, CA • Part-time • $80,000 - $120,000
+                </p>
+                <div class="status space-y-2">
+                  <p
+                    class="status-badge text-[0.875rem] text-[#002C5C] font-medium bg-[#EEF4FF] w-fit py-2 px-3 rounded-sm"
+                  >
+                    NOT APPLIED
+                  </p>
+                  <p class="text-[0.875rem] text-[#323B49] font-medium">
+                    Create stunning web experiences for high-profile clients.
+                    Must have portfolio and experience with modern web design
+                    trends.
+                  </p>
+                </div>
+                <div class="action-bottons space-x-2">
+                  <button
+                    class="status-badge text-[0.875rem] text-[#10B981] border border-[#10B981] font-medium w-fit py-2 px-3 rounded-sm cursor-pointer transition-all duration-200 hover:bg-[#10B981] hover:text-white hover:shadow-sm hover:-translate-y-0.5"
+                  >
+                    INTERVIEW
+                  </button>
+                  <button
+                    class="status-badge text-[0.875rem] text-[#EF4444] border border-[#EF4444] font-medium w-fit py-2 px-3 rounded-sm cursor-pointer transition-all duration-200 hover:bg-[#EF4444] hover:text-white hover:shadow-sm hover:-translate-y-0.5"
+                  >
+                    REJECTED
+                  </button>
+                </div>
+              </div>
               <div
                 class="card space-y-5 bg-white border border-[#F1F2F4] rounded-lg p-6 transition-all duration-200 hover:border-[#3B82F6] hover:shadow-sm hover:-translate-y-0.5"
               >

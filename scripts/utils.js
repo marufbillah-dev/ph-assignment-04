@@ -28,3 +28,28 @@ function activeBtn(id) {
   activeBtn.className =
     "text-white font-semibold bg-[#3B82F6] text-[0.75rem] px-2 rounded-sm w-20 h-8 cursor-pointer transition-all duration-200 hover:bg-[#2563EB] hover:shadow-md hover:-translate-y-0.5";
 }
+
+// out of counter
+function outOfCounter() {
+  const outOfElement = document.getElementById("out-of");
+  const availableJobsSec = document.getElementById("available-jobs");
+  const interviewedJobsSec = document.getElementById("interviewed-jobs");
+
+  if (interviewedJobsSec.classList.contains("hidden") === false) {
+    if (availableJobsSec.classList.contains("hidden") === true) {
+      jobsCountElement.innerText = interviewedJobs;
+      outOfElement.innerHTML = ` of ${totalJobs}`;
+    } else {
+      jobsCountElement.innerText = totalJobs;
+      outOfElement.innerHTML = "";
+    }
+  } else {
+    if (availableJobsSec.classList.contains("hidden") === true) {
+      jobsCountElement.innerText = rejectedJobs;
+      outOfElement.innerHTML = ` of ${totalJobs}`;
+    } else {
+      jobsCountElement.innerText = totalJobs;
+      outOfElement.innerHTML = "";
+    }
+  }
+}
