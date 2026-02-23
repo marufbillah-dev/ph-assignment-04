@@ -81,4 +81,6 @@ function toggleBtn(id) {
 
   // show selected section
   document.getElementById(id).classList.remove("hidden");
+
+  refreshView();
 }
