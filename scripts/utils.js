@@ -84,3 +84,14 @@ function toggleBtn(id) {
 
   refreshView();
 }
+
+// initialize on page load
+document.addEventListener("DOMContentLoaded", function () {
+  // set all card status to NOT APPLIED
+  document.querySelectorAll(".status-badge").forEach((badge) => {
+    if (!badge.dataset.status) {
+      badge.dataset.status = "NOT APPLIED";
+    }
+  });
+  outOfCounter();
+});
