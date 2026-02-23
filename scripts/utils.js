@@ -1,12 +1,40 @@
+// variables
+// jobs counter
+const totalJobs = document.getElementById("available-jobs").children.length;
+const interviewedJobs = document.getElementById("interview").children.length;
+const rejectedJobs = document.getElementById("rejected").children.length;
+
+// jobs counter card (total)
+const totalCountElement = document.getElementById("total-count");
+const totalCount = (totalCountElement.innerText = totalJobs);
+
+const interviewCountElement = document.getElementById("interview-count");
+
+const rejectedCountElement = document.getElementById("rejected-count");
+
+
+// available jobs counter
+const jobsCountElement = document.getElementById("jobs-count");
+jobsCountElement.innerText = totalJobs;
+
 // toggle for filer buttons
 function toggleBtn(id) {
   // hide all elements under #jobs section
   document.getElementById("available-jobs").classList.add("hidden");
-  document.getElementById("interviewed-jobs").classList.add("hidden");
-  document.getElementById("rejected-jobs").classList.add("hidden");
+  document.getElementById("interview").classList.add("hidden");
+  document.getElementById("rejected").classList.add("hidden");
 
   // display only the section clicked for
   document.getElementById(id).classList.remove("hidden");
+
+  // show no job section, if there no jobs available
+  const noJobsSec = document.getElementById("no-jobs");
+  const selected = document.getElementById(id);
+  if (selected.children.length === 0) {
+    noJobsSec.classList.remove("hidden");
+  } else {
+    noJobsSec.classList.add("hidden");
+  }
 }
 
 // change active button style
@@ -33,7 +61,7 @@ function activeBtn(id) {
 function outOfCounter() {
   const outOfElement = document.getElementById("out-of");
   const availableJobsSec = document.getElementById("available-jobs");
-  const interviewedJobsSec = document.getElementById("interviewed-jobs");
+  const interviewedJobsSec = document.getElementById("interview");
 
   if (interviewedJobsSec.classList.contains("hidden") === false) {
     if (availableJobsSec.classList.contains("hidden") === true) {
@@ -53,3 +81,6 @@ function outOfCounter() {
     }
   }
 }
+
+// set job status
+function setStatus() {}
