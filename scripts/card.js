@@ -1,4 +1,5 @@
 const jobsContainer = document.getElementById("jobs");
+
 jobsContainer.addEventListener("click", function (event) {
   const cardContainer = event.target.parentNode.parentNode;
 
@@ -89,14 +90,6 @@ jobsContainer.addEventListener("click", function (event) {
     }
 
     // count jobs after append
-    const interviewedJobs =
-      document.getElementById("interview").children.length;
-    const rejectedJobs = document.getElementById("rejected").children.length;
-
-    interviewCountElement.innerText = interviewedJobs;
-    rejectedCountElement.innerText = rejectedJobs;
-
-    const jobsCountElement = document.getElementById("jobs-count");
-    jobsCountElement.innerText = totalJobs;
+    outOfCounter();
   }
 });
