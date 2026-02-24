@@ -24,6 +24,15 @@ jobsContainer.addEventListener("click", function (event) {
 
     refreshView();
   }
+
+  // delete job
+  const deleteBtn = event.target.closest("#delete-job");
+  if (deleteBtn) {
+    const card = deleteBtn.closest(".card");
+    card.remove();
+    refreshView();
+    return;
+  }
 });
 
 // filter cards by their badge to display in interview or rejected section
